@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Diamond Emporium - Premium Jewelry</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #0d6efd;
+      --secondary-color: #6c757d;
+      --dark-color: #212529;
+      --light-color: #f8f9fa;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--dark-color);
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+
+    .hero-section {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                  url('https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1470&q=80');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 120px 0;
+      text-align: center;
+    }
+
+    .product-card {
+      transition: all 0.3s ease;
+      margin-bottom: 25px;
+      border: none;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .product-img {
+      height: 250px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .cart-icon {
+      position: relative;
+      font-size: 1.2rem;
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background-color: var(--primary-color);
+      color: white;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    footer {
+      background-color: var(--dark-color);
+      color: var(--light-color);
+      padding: 40px 0;
+    }
+
+    .section-title {
+      position: relative;
+      margin-bottom: 30px;
+      padding-bottom: 15px;
+      text-align: center;
+    }
+
+    .section-title:after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: var(--primary-color);
+    }
+
+    @media (max-width: 768px) {
+      .hero-section {
+        padding: 80px 0;
+      }
+      .product-img {
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="#"><i class="bi bi-gem me-2"></i>Diamond Emporium</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#products">Shop</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+      <div class="d-flex">
+        <button class="btn btn-outline-light me-2 cart-icon" id="cartButton">
+          <i class="bi bi-cart3"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="container">
+    <h1 class="display-3 fw-bold mb-4">Exquisite Diamonds & Jewelry</h1>
+    <p class="lead mb-4">Discover our curated collection of premium diamonds and fine jewelry</p>
+    <a href="#products" class="btn btn-primary btn-lg px-4 me-2">Shop Now</a>
+    <a href="#about" class="btn btn-outline-light btn-lg px-4">Learn More</a>
+  </div>
+</section>
+
+<!-- Products Section -->
+<section class="py-5" id="products">
+  <div class="container">
+    <h2 class="section-title text-center mb-5">Our Collection</h2>
+    <div class="row" id="productGrid">
+      <!-- Product 1 -->
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card product-card h-100">
+          <img src="https://images.pexels.com/photos/7093761/pexels-photo-7093761.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img-top product-img" alt="Bracelet">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Classic Diamond Bracelet</h5>
+            <p class="card-text">Elegant and timeless design with brilliant-cut diamond.</p>
+            <button class="btn btn-primary mt-auto w-100">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <!-- Product 2 -->
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card product-card h-100">
+          <img src="https://images.pexels.com/photos/4291121/pexels-photo-4291121.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img-top product-img" alt="Ring">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Classic Diamond Ring</h5>
+            <p class="card-text">Crafted to perfection with a brilliant round diamond.</p>
+            <button class="btn btn-primary mt-auto w-100">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <!-- Product 3 -->
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card product-card h-100">
+          <img src="https://images.pexels.com/photos/10983782/pexels-photo-10983782.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img-top product-img" alt="Necklace">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Classic Diamond Necklace</h5>
+            <p class="card-text">A graceful addition to elevate your elegance.</p>
+            <button class="btn btn-primary mt-auto w-100">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <!-- Product 4 -->
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card product-card h-100">
+          <img src="https://images.pexels.com/photos/29483946/pexels-photo-29483946/free-photo-of-elegant-diamond-and-pearl-earrings-on-stone.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img-top product-img" alt="Earrings">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Diamond Earrings</h5>
+            <p class="card-text">Delicate sparkle, perfect for everyday luxury.</p>
+            <button class="btn btn-primary mt-auto w-100">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section class="py-5 bg-light" id="about">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <h2 class="section-title">About Diamond Emporium</h2>
+        <p>For over three decades, Diamond Emporium has been synonymous with exceptional quality and craftsmanship in fine jewelry.</p>
+        <p>We source only conflict-free diamonds and every piece in our collection is handcrafted with precision and care.</p>
+      </div>
+      <div class="col-lg-6">
+        <img src="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=1374&q=80" class="img-fluid rounded shadow-lg" alt="Jewelry craftsman">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="py-5" id="contact">
+  <div class="container">
+    <h2 class="section-title">Contact Us</h2>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <form id="contactForm">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" required>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="subject" class="form-label">Subject</label>
+            <input type="text" class="form-control" id="subject" required>
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 mb-4">
+        <h5><i class="bi bi-gem me-2"></i>Diamond Emporium</h5>
+        <p>Your premier destination for exceptional diamonds and fine jewelry since 1990.</p>
+        <div>
+          <a href="#" class="text-white me-3"><i class="bi bi-facebook fs-4"></i></a>
+          <a href="#" class="text-white me-3"><i class="bi bi-instagram fs-4"></i></a>
+          <a href="#" class="text-white me-3"><i class="bi bi-twitter fs-4"></i></a>
+          <a href="#" class="text-white"><i class="bi bi-pinterest fs-4"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-4">
+      <small>&copy; 2025 Diamond Emporium. All rights reserved.</small>
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  let cartCount = 0;
+  const cartCountDisplay = document.getElementById('cartCount');
+  const addToCartButtons = document.querySelectorAll('.btn-primary');
+
+  addToCartButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      cartCount++;
+      cartCountDisplay.textContent = cartCount;
+    });
+  });
+
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert("Thank you for contacting us! We'll get back to you soon.");
+    this.reset();
+  });
+</script>
+</body>
+</html>
